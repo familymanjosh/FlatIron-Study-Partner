@@ -3,7 +3,7 @@
       {
         "id": 1,
         "title": "Functions and Scope",
-        "link": "https://youtu.be/01KEGPz0ut0",
+        "link": "https://www.youtube.com/embed/01KEGPz0ut0",
         "phase": 1,
         "date": "03/20/23",
         "instructor": "Morgan VanYperen"
@@ -11,7 +11,7 @@
       {
         "id": 2,
         "title": "DOM Manipulation",
-        "link": "https://youtu.be/JIynEtQE8yQ",
+        "link": "https://www.youtube.com/embed/JIynEtQE8yQ",
         "phase": 1,
         "date": "03/21/23",
         "instructor": "Morgan VanYperen"
@@ -19,7 +19,7 @@
       {
         "id": 3,
         "title": "DOM Events",
-        "link": "https://youtu.be/K5WhnNf9pDI",
+        "link": "https://www.youtube.com/embed/K5WhnNf9pDI",
         "phase": 1,
         "date": "03/22/23",
         "instructor": "Morgan VanYperen"
@@ -27,7 +27,7 @@
       {
         "id": 4,
         "title": "Communicating with the Server",
-        "link": "https://youtu.be/l-67IDrRMaI",
+        "link": "https://www.youtube.com/embed/l-67IDrRMaI",
         "phase": 1,
         "date": "03/23/23",
         "instructor": "Morgan VanYperen"
@@ -35,7 +35,7 @@
       {
         "id": 5,
         "title": "Communicating with the Server Part 2",
-        "link": "https://youtu.be/qI6yX2-h2Xs",
+        "link": "https://www.youtube.com/embed/qI6yX2-h2Xs",
         "phase": 1,
         "date": "03/24/23",
         "instructor": "Morgan VanYperen"
@@ -51,7 +51,7 @@
       {
         "id": 7,
         "title": "Review + Lab Walkthrough",
-        "link": "https://www.youtube.com/watch?v=H-jB3qbCuh0",
+        "link": "https://www.youtube.com/embed/watch?v=H-jB3qbCuh0",
         "phase": 1,
         "date": "03/28/23",
         "instructor": "Morgan VanYperen"
@@ -59,7 +59,7 @@
       {
         "id": 8, 
         "title": "Mock CC Review/Walkthrough",
-        "link": "https://youtu.be/QIdLQXWPU-A",
+        "link": "https://www.youtube.com/embed/QIdLQXWPU-A",
         "phase": 1,
         "date": "03/29/23",
         "instructor": "Morgan VanYperen"
@@ -67,7 +67,7 @@
       {
         "id": 9, 
         "title": "Intro to React + Components and Props",
-        "link": "https://www.youtube.com/watch?v=DVygqXBRxx4",
+        "link": "https://www.youtube.com/embed/DVygqXBRxx4",
         "phase": 2,
         "date": "04/10/23",
         "instructor": "Lantz Warrick"
@@ -75,7 +75,7 @@
       {
         "id": 10, 
         "title": "State and Events",
-        "link": "https://youtu.be/bLdGwSxyaVQ",
+        "link": "https://www.youtube.com/embed/bLdGwSxyaVQ",
         "phase": 2,
         "date": "04/11/23",
         "instructor": "Morgan VanYperen"
@@ -83,7 +83,7 @@
       {
         "id": 11, 
         "title": "Information Flow",
-        "link": "https://youtu.be/Pt9NmlzvGrE",
+        "link": "https://www.youtube.com/embed/Pt9NmlzvGrE",
         "phase": 2,
         "date": "04/12/23",
         "instructor": "Morgan VanYperen"
@@ -91,7 +91,7 @@
       {
         "id": 12, 
         "title": "React Forms",
-        "link": "https://youtu.be/oUli1ocqAQc",
+        "link": "https://www.youtube.com/embed/oUli1ocqAQc",
         "phase": 2,
         "date": "04/13/23",
         "instructor": "Morgan VanYperen"
