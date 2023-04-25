@@ -91,7 +91,7 @@
     {
       "id": 9, 
       "title": "Intro to React + Components and Props",
-      "link": "https://www.youtube.com/watch?v=DVygqXBRxx4",
+      "link": "https://www.youtube.com/embed/DVygqXBRxx4",
       "phase": 2,
       "date": "04/10/23",
       "instructor": "Lantz Warrick",
@@ -124,7 +124,7 @@
     {
       "id": 12, 
       "title": "React Forms",
-      "link": "https://youtu.be/oUli1ocqAQc",
+      "link": "https://www.youtube.com/embed/oUli1ocqAQc",
       "phase": 2,
       "date": "04/13/23",
       "instructor": "Morgan VanYperen",
