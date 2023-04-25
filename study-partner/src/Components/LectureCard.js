@@ -1,21 +1,19 @@
 import React from "react";
 
 const LectureCard = ({ lecture }) => {
-  const { title, image, Instructor, description, Link } = lecture;
+  const {Topic, Link, Instructor, Notes, Phase, Date, StarterCode, Solution} = lecture
 
   return (
     <div className="card">
       <card>
-        <img src={image} alt={title} />
-        <h2>{title}</h2>
-        <p>{instructor}</p>
-        <p>{description}</p>
+        <h2>{Topic}</h2>
+        <p>{Instructor}</p>
+        <p>{Notes}</p>
         <iframe
           width="560"
           height="315"
-          src={link}
-          alt={title}
-          title={title}
+          src={Link}
+          title={Topic}
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
