@@ -9,6 +9,7 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
           <span className="logo">{"//"}</span>
           Flatiron's Number 1 Study Partner App
         </h1>
+        <button onClick={filterInstructer}>{buttonTextContent}</button>
         <button onClick={handleClick}>{buttonTextContent}</button>
       </header>
     );
