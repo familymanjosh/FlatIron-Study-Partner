@@ -1,7 +1,7 @@
 import React from "react";
 
 const LectureCard = ({ lecture }) => {
-  const { title, image, instructor, description, link } = lecture;
+  const { title, image, Instructor, description, Link } = lecture;
 
   return (
     <div className="card">
