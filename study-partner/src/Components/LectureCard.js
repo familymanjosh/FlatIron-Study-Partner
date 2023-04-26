@@ -10,8 +10,9 @@ const LectureCard = ({ lecture }) => {
         <p>{instructor}</p>
         <p>{notes}</p>
         <iframe
-          width="560"
-          height="315"
+          
+          width="100%"
+          height="auto"
           src={link}
           title={title}
           frameborder="0"
