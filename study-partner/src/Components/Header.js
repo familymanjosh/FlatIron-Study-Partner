@@ -15,32 +15,32 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
           Flatiron's Number 1 Study Partner App
         </h1>
         <Menu>
-              <NavLink to="/allLectures">
+              <NavLink className= "NavBtn" to="/allLectures">
                   <Menu.Item>
                       All Lectures
                   </Menu.Item>
               </NavLink>
-              <NavLink to="/instructors">
+              <NavLink className= "NavBtn" to="/instructors">
                   <Menu.Item>
                       Instructors
                   </Menu.Item>
               </NavLink>
-              <NavLink to="/phases">
+              <NavLink className= "NavBtn" to="/phases">
                   <Menu.Item>
                       Phases
                   </Menu.Item>
               </NavLink>
-              <NavLink to="/cohorts">
+              <NavLink className= "NavBtn" to="/cohorts">
                   <Menu.Item>
                       Cohorts
                   </Menu.Item>
               </NavLink>
-              <NavLink to="/cohorts/:id">
+              <NavLink className= "NavBtn" to="/cohorts/:id">
                   <Menu.Item>
                       Cohort
                   </Menu.Item>
               </NavLink>
-              <NavLink to="/cohorts/:id/lectures">
+              <NavLink className= "NavBtn" to="/cohorts/:id/lectures">
                   <Menu.Item>
                       Cohort Lectures
                   </Menu.Item>

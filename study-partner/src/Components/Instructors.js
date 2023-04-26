@@ -11,7 +11,7 @@ const Instructors = ({ lectures }) => {
             <h1>Instructors
                 <button>Morgan VanYperen</button>
                 <button>Lantz Warrick</button>
-                <button>Eric Kim</button>
+                <button>Phil Roth</button>
             </h1>
         </div>
     );

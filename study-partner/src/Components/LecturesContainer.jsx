@@ -8,15 +8,6 @@ const LecturesContainer = ({lectures}) => {
 
     return (
         <div>
-        <h1>
-        <div className="btns">
-        <button className="ui button"  >Add Lecture</button>
-        <button className="ui button" >Instructors</button>
-        <button className="ui button"  >Phases</button>
-        <button className="ui button"  >Cohort Start Date</button>
-        <button className="ui button"  >All lectures</button>
-        </div>
-        </h1>
         <div className="ui four cards">{renderLectures}</div>
         </div>
     );
