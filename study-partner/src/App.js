@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import LecturesContainer from "./Components/LecturesContainer";
+import { Switch, Route } from "react-router-dom";
+// import AddtoLectures from "./Components/AddtoLectures";
+import Instructors from "./Components/Instructors";
+
+
 
 
 
@@ -29,9 +34,20 @@ const App = () => {
   return (
     <div className={isDarkMode ? "App" : "App light"}>
       <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
-      <LecturesContainer lectures={lectures} />
-
-
+      <Switch>
+        <Route path="/allLectures">
+          <LecturesContainer lectures={lectures} />
+        </Route>
+        <Route path="/instructors">
+          <Instructors lectures={lectures} />
+        </Route>
+        {/* <Route path="/phases">
+          <Phases lectures={lectures} />
+        </Route>
+        <Route path="/cohorts">
+          <Cohorts lectures={lectures} />
+        </Route> */}
+      </Switch>
     </div>
   );
 };
