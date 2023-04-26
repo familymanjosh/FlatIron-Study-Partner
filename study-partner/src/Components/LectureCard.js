@@ -1,13 +1,14 @@
 import React from "react";
 
 const LectureCard = ({ lecture }) => {
-  const { title, link, instructor, notes } = lecture;
+  const { title, date, link, instructor, notes } = lecture;
 
   return (
     <div className="card">
       <card>
         <h2>{title}</h2>
-        <p>{instructor}</p>
+        <h2>{date}</h2>
+        <h1>{instructor}</h1>
         <p>{notes}</p>
         <iframe
           
@@ -19,6 +20,8 @@ const LectureCard = ({ lecture }) => {
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
+        <button className="viewbtn">view</button>
+        <button className="claps">👏</button>
       </card>
     </div>
   );

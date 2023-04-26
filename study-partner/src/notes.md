@@ -1,15 +1,5 @@
      //   {
-    //     "id": 1,
-    //     "Topic": "Functions and Scope",
-    //     "Link": "https://youtu.be/01KEGPz0ut0",
-    //     "Phase": 1,
-    //     "Date": "April 1, 2023",
-    //     "StarterCode": "github",
-    //     "Solution": "",
-    //     "Notes": "optional chaining - nullish coalescing operator",   
-    //     "Instructer": "Morgan"
-    //   },
-        // {
+    //     "i 
         // "id": 3, 
         // "Date": "2022-11-28",
         // "Topic": "Object Ball Walkthrough",

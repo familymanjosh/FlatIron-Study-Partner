@@ -5,11 +5,12 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
   
     return (
       <header>
+        <button onClick={handleClick}>{buttonTextContent}</button>
         <h1>
           <span className="logo">{"//"}</span>
           Flatiron's Number 1 Study Partner App
         </h1>
-        <button onClick={handleClick}>{buttonTextContent}</button>
+        <button onClick={handleClick}>Home</button>
       </header>
     );
   };
