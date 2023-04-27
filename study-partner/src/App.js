@@ -106,18 +106,18 @@ const App = () => {
   };
   const addReview = (id, review) => {
     const currentReviews = lectures.find(
-      (lecture) => lecture.id === id
+      (lecture) => lecture.id == id
     ).reviews;
 
     fetch(`http://localhost:4000/lectures/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ reviews:  history.push("/NewReviews")}),
+      body: JSON.stringify({ reviews: [...currentReviews, review]}),
     });
     setLectures(
       lectures.map((lecture) => {
-        if (lecture.id === id) {
-          return { ...lecture, reviews:  history.push("/NewReviews")};
+        if (lecture.id == id) {
+          return { ...lecture, reviews: [...currentReviews, review]};
         } else {
           return lecture;
         }
@@ -132,7 +132,7 @@ const App = () => {
     <div className={isDarkMode ? "App" : "App light"}>
       <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
       <Switch>
-        <Route path="/allLectures">
+        <Route exact path="/lectures">
           <LecturesContainer lectures={lectures} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike} />
         </Route>
         <Route path="/instructors">
@@ -147,7 +147,7 @@ const App = () => {
         <Route path="/NewLecture">
           <AddtoLecture handleSubmit={handleSubmit} />
         </Route>
-        <Route path="/NewReviews">
+        <Route path="/lectures/:id/reviews/new">
           <NewReviewForm addReview={addReview} />
         </Route>
 

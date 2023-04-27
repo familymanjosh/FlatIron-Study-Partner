@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Phase = ({ lecture,addClap,addReview,deleteLecture,handleDislike }) => {
     const { title, date, link, instructor, image, startDate, reviews, clapCount, dislikes, id } = lecture;
@@ -18,9 +19,7 @@ const Phase = ({ lecture,addClap,addReview,deleteLecture,handleDislike }) => {
     const handleClap = () => {
       addClap(id);
     };
-    const addReviews = () => {
-      addReview(id);
-    };
+
   
     return (
       <div className="card">
@@ -30,7 +29,7 @@ const Phase = ({ lecture,addClap,addReview,deleteLecture,handleDislike }) => {
           <h2>{instructor}</h2>
           <h2>Cohort: {startDate}</h2>
           <img src={image} alt="Lecture" />
-          <h2>Reviews: {reviews} </h2>
+          <h2>Reviews: <ul>{reviews.map(r => <li>{r}</li>)}</ul> </h2>
           {/* <iframe
             width="100%"
             height="auto"
@@ -43,7 +42,9 @@ const Phase = ({ lecture,addClap,addReview,deleteLecture,handleDislike }) => {
           <button className="viewbtn" onClick={handleView}>Youtube</button>
           <button className="claps" onClick={handleClap} >👏 {clapCount || 0}</button>
           <button className="thumsDown" onClick={dislikeClick} >👎 {dislikes || 0} </button>
-          <button className="addReviews" onClick={addReviews} >Add review</button>
+          <Link to={`/lectures/${id}/reviews/new`} > 
+          <button className="addReviews" >Add review</button>
+          </Link>
           <button className="delete" onClick={deletesLecture}>Delete</button>
         </card>
       </div>
