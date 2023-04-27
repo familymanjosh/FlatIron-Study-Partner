@@ -130,6 +130,7 @@ header {
 }
 
 /* forms */
+
 .form {
   display: flex;
   flex-direction: column;
@@ -148,9 +149,13 @@ textarea,
 select {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  left: 500px; 
   padding: 0.5rem;
   border: none;
   font-size: 1.25rem;
+  width: 50%;
   font-weight: bold;
   transition: all 0.3s;
   border: 2px solid var(--color);

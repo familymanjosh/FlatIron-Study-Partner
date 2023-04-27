@@ -1,17 +1,23 @@
 import React from "react";
 
 const LectureCard = ({ lecture }) => {
-  const { title, date, link, instructor, notes } = lecture;
+  const { title, date, link, instructor, image, startDate, reviews  } = lecture;
+
+
+  const handleView = () => {
+    window.open(link, "_blank");
+  };
 
   return (
     <div className="card">
       <card>
-        <h2>{title}</h2>
-        <h2>{date}</h2>
-        <h1>{instructor}</h1>
-        <p>{notes}</p>
-        <iframe
-          
+        <h1>{title}</h1>
+        <h2>Date: {date}</h2>
+        <h2>{instructor}</h2>
+        <h2>Cohort: {startDate}</h2>
+        <img src={image} alt="Lecture" />
+        <h2>Reviews: {reviews} </h2>
+        {/* <iframe
           width="100%"
           height="auto"
           src={link}
@@ -19,9 +25,13 @@ const LectureCard = ({ lecture }) => {
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe>
-        <button className="viewbtn">view</button>
+        ></iframe> */}
+        <button className="viewbtn" onClick={handleView}>Youtube</button>
         <button className="claps">👏</button>
+        <button className="thumsDown">👎</button>
+        <button className="addReviews">Add review</button>
+        <button className="addNotes">Add Notes</button>
+        <button className="delete">Delete</button>
       </card>
     </div>
   );
