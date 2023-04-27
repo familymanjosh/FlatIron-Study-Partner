@@ -12,6 +12,7 @@ import "./App.css";
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [lectures, setLectures] = useState([]);
+  // const [reviews, setReviews] = useState([]);
   
   const history = useHistory();
 
@@ -103,26 +104,27 @@ const App = () => {
       })
     );
   };
-  const addReview = (id, newReview) => {
+  const addReview = (id, review) => {
+    const currentReviews = lectures.find(
+      (lecture) => lecture.id === id
+    ).reviews;
+
     fetch(`http://localhost:4000/lectures/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ reviews: [...newReview] }),
-    })
-      .then((r) => r.json())
-      .then((updatedLecture) => {
-        setLectures(
-          lectures.map((lecture) => {
-            if (lecture.id === id) {
-              return { ...lecture, reviews: updatedLecture.reviews };
-            } else {
-              return lecture;
-            }
-          })
-        );
-        history.push("/allLectures");
-      });
+      body: JSON.stringify({ reviews:  history.push("/NewReviews")}),
+    });
+    setLectures(
+      lectures.map((lecture) => {
+        if (lecture.id === id) {
+          return { ...lecture, reviews:  history.push("/NewReviews")};
+        } else {
+          return lecture;
+        }
+      })
+    );
   };
+
 
 
 

@@ -1,134 +1,60 @@
-     //   {
-    //     "i 
-        // "id": 3, 
-        // "Date": "2022-11-28",
-        // "Topic": "Object Ball Walkthrough",
-        // "Phase": 1,
-        // "Link": "Link",
-        // "StarterCode": "github",
-        // "Solution": "",
-        // "Notes": "optional chaining - nullish coalescing operator",
-        // "Instructer": "Matteo Piccini"
-        // },
-        // {
-        // "id": 4,
-        // "Date": "2022-11-29",
-        // "Topic": "TaskLister Walkthrough",
-        // "Phase": 1,
-        // "Link": "Link",
-        // "StarterCode": "shared on Slack",
-        // "Solution": "",
-        // "Notes": "",
-        // "Instructer": "Matteo Piccini"
-        // },
-        // {
-        // "id": 5,
-        // "Date": "2022-11-30",
-        // "Topic": "Toy Tale Walkthrough",
-        // "Phase": 1,
-        // "Link": "Link",
-        // "StarterCode": "github",
-        // "Solution": "",
-        // "Notes": "fetch API - post fetch requests example",
-        // "Instructer": "Matteo Piccini"
-        // },
-        // {
-        // "id": 6,
-        // "Date": "2022-12-01",
-        // "Topic": "Quotes Extra Practice Lab",
-        // "Phase": 1,
-        // "Link": "Link",
-        // "StarterCode": "github",
-        // "Solution": "",
-        // "Notes": "",
-        // "Instructer": "Matteo Piccini"
-        // },
-        // {
-        // "id": 7,
-        // "Date": "2022-12-05",
-        // "Topic": "Git & GitHub Collaboration Flow Demo",
-        // "Phase": 2,
-        // "Link": "Link",
-        // "StarterCode": "N/A",
-        // "Solution": "",      
-        // "Notes": "Canvas",
-        // "Instructer": "Matteo Piccini"
-        // },
-        // {
-        // "id": 8,
-        // "Date": "2022-12-12",
-        // "Topic": "Intro to React - creating a new project, props and state",
-        // "Phase": 2,
-        // "Link": "Link",
-        // "StarterCode": "Link",
-        // "Solution": "", 
-        // "Notes": "JSX - useState Hook - Components & Props - Create a new React App"
-        // },
-        // {
-        // "id": 9,
-        // "Date": "2022-12-13",
-        // "Topic": "Intro to State + State Lab Walkthrough",
-        // "Phase": 2,
-        // "Link": "Link",
-        // "StarterCode": "N/A",
-        // "Solution": "",      
-        // "Notes": "useState with functional updates"
-        // },
-        // {
-        // "id": 10,
-        // "Date": "2022-12-14",
-        // "Topic": "Intro to State + State Lab Walkthrough Pt 2",
-        // "Phase": 2,
-        // "Link": "Link",
-        // "StarterCode": "github",
-        // "Solution": "",
-        // "Notes": "useState with functional updates"
-        // },
-        // {
-        // "id": 11,
-        // "Date": "2022-12-15",
-        // "Topic": "Mini Project Walkthrough pt 1 & 2",
-        // "Phase": 2,
-        // "Link": "Link",
-        // "StarterCode": "github",
-        // "Solution": "",
-        // "Notes": "instructions"
-        // },
-        // {
-        // "id": 12,
-        // "Date": "2022-12-16",
-        // "Topic": "Mini Project Walkthrough pt 3 - useEffect + conditional rendering",
-        // "Phase": 2,
-        // "Link": "Link",
-        // "StarterCode": "github",
-        // "Solution": "",
-        // "Notes": "useEffect ultimate guide"
-        // },
-        // {
-        // "id": 13,
-        // "Date": "2022-12-19",
-        // "Topic": "Group Discussion: useEffect",
-        // "Phase": 2,
-        // "Link": "Link",
-        // "StarterCode": "github",
-        // "Solution": "",
-        // "Notes": ""
-        // },
-        // {
-        // "Date": "2022-12-19",
-        // "Topic": "Rick & Morty: Controlled Forms",
-        // "Phase": 2,
-        // "Link": "Link",
-        // "StarterCode": "github",
-        // "Solution": "",
-        // "Notes": "a couple of simple blogs on the topic: blog1 (includes class-based example - skip if not interested) , blog2 (includes an example with a reducer function - skip if not interested)"
-        // },
-        // {
-        // "Date": "2022-12-21",
-        // "Topic": "Greglist Mock CC Walkthrough",
-        // "Phase": 2,
-        // "Link": "N/A",
-        // "StarterCode": "",
-        // "Solution": "",
-        // "Notes": ""
-        // }
+   const addReview = (id, newReview) => {
+    fetch(`http://localhost:4000/lectures/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ reviews: [...newReview] }),
+    })
+      .then((r) => r.json())
+      .then((updatedLecture) => {
+        setLectures(
+          lectures.map((lecture) => {
+            if (lecture.id === id) {
+              return { ...lecture, reviews: updatedLecture.reviews };
+            } else {
+              return lecture;
+            }
+          })
+        );
+        history.push("/allLectures");
+      });
+  };
+
+
+   const addReview = (id, review) => {
+    const currentReviews = lectures.find(
+      (lecture) => lecture.id === id
+    ).reviews;
+
+    fetch(`http://localhost:4000/lectures/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ reviews: currentReviews + 1 }),
+    });
+    setLectures(
+      lectures.map((lecture) => {
+        if (lecture.id === id) {
+          return { ...lecture, reviews: currentReviews + 1 };
+        } else {
+          return lecture;
+        }
+      })
+    );
+    const addReview = (id, newReview) => {
+  fetch(`http://localhost:4000/lectures/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ reviews: [...reviews, newReview] }),
+  })
+    .then((r) => r.json())
+    .then((updatedLecture) => {
+      setReviews(updatedLecture.reviews);
+      history.push("/allLectures");
+    });
+};
+This should add the new review to the reviews array in state and update it with the reviews returned from the server. Note that I assumed the server response contains an array of reviews in the reviews property, just like in the original version of your code. If this is not the case, you'll need to adjust the code accordingly.
+
+
+
+
+
+
