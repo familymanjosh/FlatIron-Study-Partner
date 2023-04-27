@@ -25,6 +25,11 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
                       New Lecture
                   </Menu.Item>
               </NavLink>
+              <NavLink className= "NavBtn" to="/NewReviews">
+                  <Menu.Item>
+                      New Review
+                  </Menu.Item>
+              </NavLink>
               <NavLink className= "NavBtn" to="/allLectures">
                   <Menu.Item>
                       All Lectures

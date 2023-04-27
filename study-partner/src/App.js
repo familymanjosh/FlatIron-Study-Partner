@@ -6,6 +6,7 @@ import AddtoLecture from "./Components/AddtoLecture";
 import Instructors from "./Components/Instructors";
 import Phases from "./Components/Phases";
 import Cohorts from "./Components/Cohorts";
+import NewReviewForm from "./Components/NewReviewForm";
 import "./App.css";
 
 
@@ -105,7 +106,9 @@ const App = () => {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ reviews: [...lectures.reviews, newReview] }),
-    });
+    })
+    .then((r) => r.json())
+    .then((newReview) => {
     setLectures(
       lectures.map((lecture) => {
         if (lecture.id === id) {
@@ -115,6 +118,8 @@ const App = () => {
         }
       })
     );
+    history.push("/allLectures");
+  });
   };
 
 
@@ -137,6 +142,9 @@ const App = () => {
         </Route>
         <Route path="/NewLecture">
           <AddtoLecture handleSubmit={handleSubmit} />
+        </Route>
+        <Route path="/NewReviews">
+          <NewReviewForm addReview={addReview} />
         </Route>
 
       </Switch>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const LectureCard = ({ lecture }) => {
+const LectureCard = ({ lecture, addClap, addReview, deleteLecture, handleDislike }) => {
   const { title, date, link, instructor, image, startDate, reviews, clapCount, dislikes   } = lecture;
 
 
