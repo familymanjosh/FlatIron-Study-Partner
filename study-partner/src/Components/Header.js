@@ -8,52 +8,52 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
     const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
   
     return (
-      <header>
-        <button onClick={handleClick}>{buttonTextContent}</button>
-        <h1>
-          <span className="logo">{"//"}</span>
-          Flatiron's Number 1 Study Partner App
-        </h1>
-        <Menu>
-              <NavLink className= "NavBtn" to="/">
-                  <Menu.Item>
-                      Home
-                  </Menu.Item>
-              </NavLink>
-              <NavLink className= "NavBtn" to="/NewLecture">
-                  <Menu.Item>
-                      New Lecture
-                  </Menu.Item>
-              </NavLink>
-              <NavLink className= "NavBtn" to="/NewReviews">
-                  <Menu.Item>
-                      New Review
-                  </Menu.Item>
-              </NavLink>
-              <NavLink className= "NavBtn" to="/allLectures">
-                  <Menu.Item>
-                      All Lectures
-                  </Menu.Item>
-              </NavLink>
-              <NavLink className= "NavBtn" to="/instructors">
-                  <Menu.Item>
-                      Instructors
-                  </Menu.Item>
-              </NavLink>
-              <NavLink className= "NavBtn" to="/phases">
-                  <Menu.Item>
-                      Phases
-                  </Menu.Item>
-              </NavLink>
-              <NavLink className= "NavBtn" to="/cohorts">
-                  <Menu.Item>
-                      Cohorts
-                  </Menu.Item>
-              </NavLink>
-              
-  </Menu>
-        <button onClick={handleClick}>Home</button>
-      </header>
+        <div className='nav'>
+            <header>
+            <button onClick={handleClick}>{buttonTextContent}</button>
+            <h1>
+            <span className="logo">{"//"}</span>
+            Flatiron's Study Partner
+            </h1>
+            <Menu className='menu'>
+                <NavLink to="/">
+                    <Menu.Item>
+                        Home
+                    </Menu.Item>
+                </NavLink>
+                <NavLink to="/NewLecture">
+                    <Menu.Item>
+                        New Lecture
+                    </Menu.Item>
+                </NavLink>
+                <NavLink to="/NewReviews">
+                    <Menu.Item>
+                        New Review
+                    </Menu.Item>
+                </NavLink>
+                <NavLink to="/allLectures">
+                    <Menu.Item>
+                        All Lectures
+                    </Menu.Item>
+                </NavLink>
+                <NavLink to="/instructors">
+                    <Menu.Item>
+                        Instructors
+                    </Menu.Item>
+                </NavLink>
+                <NavLink to="/phases">
+                    <Menu.Item>
+                        Phases
+                    </Menu.Item>
+                </NavLink>
+                <NavLink to="/cohorts">
+                    <Menu.Item>
+                        Cohorts
+                    </Menu.Item>
+                </NavLink>
+            </Menu>
+            </header>
+        </div>
     );
   };
   

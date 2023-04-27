@@ -9,10 +9,6 @@ import Cohorts from "./Components/Cohorts";
 import NewReviewForm from "./Components/NewReviewForm";
 import "./App.css";
 
-
-
-
-
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [lectures, setLectures] = useState([]);
