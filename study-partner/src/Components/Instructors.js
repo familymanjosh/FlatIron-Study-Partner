@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Instructor from "./Instructor";
 
-const Instructors = ({ lectures }) => {
+const Instructors = ({ lectures,addClap,addReview,deleteLecture,handleDislike }) => {
   const [selectedInstructor, setSelectedInstructor] = useState("");
 
 
@@ -32,7 +32,7 @@ const Instructors = ({ lectures }) => {
       </h1>
       <div className="instructor-list">
         {filteredLectures.map((lecture) => (
-          <Instructor key={lecture.id} lecture={lecture} />
+          <Instructor key={lecture.id} lecture={lecture} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike}/>
         ))}
       </div>
     </div>

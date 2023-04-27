@@ -5,7 +5,7 @@ const AddtoLecture = ({handleSubmit}) => {
     const [link, setLink] = useState("");
     const [phase, setPhase] = useState("");
     const [date, setDate] = useState("");
-    const [startDate, setStartDate] = useState("");
+    const [cohort, setCohort] = useState("");
     const [reviews, setReviews] = useState("");
     const [instructor, setInstructor] = useState("");
     const [starterCode, setStarterCode] = useState("");
@@ -53,10 +53,10 @@ const AddtoLecture = ({handleSubmit}) => {
                 <br />
                 <input
                     type="text"
-                    name="startDate"
-                    value={startDate}
+                    name="cohort"
+                    value={cohort}
                     placeholder="Enter a lecture's Cohort start date..."
-                    onChange={(e) => setStartDate(e.target.value)}
+                    onChange={(e) => setCohort(e.target.value)}
 
                     className="input-text" />
                 <br />

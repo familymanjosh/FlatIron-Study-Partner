@@ -34,7 +34,7 @@ const App = () => {
       link: e.target[1].value,
       phase: e.target[2].value,
       date: e.target[3].value,
-      startDate: e.target[4].value,
+      cohort: e.target[4].value,
       reviews: e.target[5].value,
       instructor: e.target[6].value,
       starterCode: e.target[7].value,
@@ -54,22 +54,86 @@ const App = () => {
       history.push("/allLectures");
     });
   };
+  const addClap = (id) => {
+    const currentClapCount = lectures.find(
+      (lecture) => lecture.id === id
+    ).clapCount;
+
+    fetch(`http://localhost:4000/lectures/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ clapCount: currentClapCount + 1 }),
+    });
+    setLectures(
+      lectures.map((lecture) => {
+        if (lecture.id === id) {
+          return { ...lecture, clapCount: currentClapCount + 1 };
+        } else {
+          return lecture;
+        }
+      })
+    );
+  };
+  const deleteLecture = (id) => {
+    fetch(`http://localhost:4000/lectures/${id}`, {
+      method: "DELETE",
+    });
+    setLectures(lectures.filter((lecture) => lecture.id !== id));
+  };
+  const handleDislike = (id) => {
+    const currentDislikes = lectures.find(
+      (lecture) => lecture.id === id
+    ).dislikes;
+
+    fetch(`http://localhost:4000/lectures/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ dislikes: currentDislikes + 1 }),
+    });
+    setLectures(
+      lectures.map((lecture) => {
+        if (lecture.id === id) {
+          return { ...lecture, dislikes: currentDislikes + 1 };
+        } else {
+          return lecture;
+        }
+      })
+    );
+  };
+  const addReview = (id, newReview) => {
+    fetch(`http://localhost:4000/lectures/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ reviews: [...lectures.reviews, newReview] }),
+    });
+    setLectures(
+      lectures.map((lecture) => {
+        if (lecture.id === id) {
+          return { ...lecture, reviews: [...lectures.reviews, newReview] };
+        } else {
+          return lecture;
+        }
+      })
+    );
+  };
+
+
 
   return (
     <div className={isDarkMode ? "App" : "App light"}>
       <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
       <Switch>
         <Route path="/allLectures">
-          <LecturesContainer lectures={lectures} />
+          <LecturesContainer lectures={lectures} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike} />
         </Route>
         <Route path="/instructors">
-          <Instructors lectures={lectures} />
+          <Instructors lectures={lectures} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike}  />
         </Route>
         <Route path="/phases">
-          <Phases lectures={lectures} />
+          <Phases lectures={lectures} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike} />
         </Route>
         <Route path="/cohorts">
-          <Cohorts lectures={lectures} />
+          <Cohorts lectures={lectures} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike}  />
         </Route>
         <Route path="/NewLecture">
           <AddtoLecture handleSubmit={handleSubmit} />

@@ -1,7 +1,7 @@
 import React from "react";
 
-const Instructor = ({lecture}) => {
-    const { title, date, link, phase, instructor, reviews, cohort, image  } = lecture
+const Instructor = ({lecture,addClap,addReview,deleteLecture,handleDislike}) => {
+    const { title, date, link, phase, instructor, reviews, cohort, image, clapCount, dislikes  } = lecture
     const handleView = () => {
         window.open(link, "_blank");
       };
@@ -23,13 +23,12 @@ const Instructor = ({lecture}) => {
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-          ></iframe> */}
+          ></iframe>  */}
           <button className="viewbtn" onClick={handleView}>Youtube</button>
-          <button className="claps">👏</button>
-          <button className="thumsDown">👎</button>
-          <button className="addReviews">Add review</button>
-          <button className="addNotes">Add Notes</button>
-          <button className="delete">Delete</button>
+          <button className="claps" onClick={addClap} >👏 {clapCount}</button>
+          <button className="thumsDown" onClick={handleDislike} >👎 {dislikes} </button>
+          <button className="addReviews" onClick={addReview} >Add review</button>
+          <button className="delete" onClick={deleteLecture}>Delete</button>
         </card>
       </div>
     )
