@@ -120,6 +120,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  
 }
 
 .logo {
@@ -127,8 +128,22 @@ header {
   font-size: 1.25em;
   font-family: Helvetica;
   margin-right: 0.5rem;
+  
 }
 
+.nav {
+  padding-right: 850px;
+  display: block;
+  margin: auto;
+  padding: auto;
+  text-align: center;
+  position: relative;
+  left: 425px;
+}
+
+.menu {
+
+}
 /* forms */
 
 .form {
@@ -138,6 +153,7 @@ header {
   margin: 0 auto;
   border: 2px solid var(--dark-turquoise);
   padding: 1.75rem;
+  
 }
 
 .form h3 {
@@ -150,8 +166,7 @@ select {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
   text-align: center;
-  position: relative;
-  left: 500px; 
+  position: relative; 
   padding: 0.5rem;
   border: none;
   font-size: 1.25rem;
@@ -193,6 +208,7 @@ select:focus {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
   gap: 1.5rem;
+  padding-left: 200px;
 }
 
 .card {
@@ -268,3 +284,5 @@ select:focus {
   border: 2px solid var(--blue-dark);
   color: var(--white);
 }
+
+
