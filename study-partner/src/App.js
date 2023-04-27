@@ -72,9 +72,15 @@ const App = () => {
     );
   };
   const deleteLecture = (id) => {
+    if (id < 79) {
+      alert("Cannot delete lectures with IDs from 1 to 78.");
+      return;
+    }
+  
     fetch(`http://localhost:4000/lectures/${id}`, {
       method: "DELETE",
     });
+  
     setLectures(lectures.filter((lecture) => lecture.id !== id));
   };
   const handleDislike = (id) => {
@@ -101,21 +107,21 @@ const App = () => {
     fetch(`http://localhost:4000/lectures/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ reviews: [...lectures.reviews, newReview] }),
+      body: JSON.stringify({ reviews: [...newReview] }),
     })
-    .then((r) => r.json())
-    .then((newReview) => {
-    setLectures(
-      lectures.map((lecture) => {
-        if (lecture.id === id) {
-          return { ...lecture, reviews: [...lectures.reviews, newReview] };
-        } else {
-          return lecture;
-        }
-      })
-    );
-    history.push("/allLectures");
-  });
+      .then((r) => r.json())
+      .then((updatedLecture) => {
+        setLectures(
+          lectures.map((lecture) => {
+            if (lecture.id === id) {
+              return { ...lecture, reviews: updatedLecture.reviews };
+            } else {
+              return lecture;
+            }
+          })
+        );
+        history.push("/allLectures");
+      });
   };
 
 

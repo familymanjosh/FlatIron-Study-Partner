@@ -1,10 +1,25 @@
 import React from "react";
 
 const Instructor = ({lecture,addClap,addReview,deleteLecture,handleDislike}) => {
-    const { title, date, link, phase, instructor, reviews, cohort, image, clapCount, dislikes  } = lecture
+    const { title, date, link, phase, instructor, reviews, cohort, image, clapCount, dislikes, id  } = lecture
     const handleView = () => {
         window.open(link, "_blank");
       };
+      const dislikeClick = () => {
+        handleDislike(id);
+      };
+    
+      const deletesLecture = () => {
+        deleteLecture(id);
+      };
+    
+      const handleClap = () => {
+        addClap(id);
+      };
+      const addReviews = () => {
+        addReview(id);
+      };
+
     return (
         <div className="card">
         <card>
@@ -25,10 +40,10 @@ const Instructor = ({lecture,addClap,addReview,deleteLecture,handleDislike}) => 
             allowfullscreen
           ></iframe>  */}
           <button className="viewbtn" onClick={handleView}>Youtube</button>
-          <button className="claps" onClick={addClap} >👏 {clapCount}</button>
-          <button className="thumsDown" onClick={handleDislike} >👎 {dislikes} </button>
-          <button className="addReviews" onClick={addReview} >Add review</button>
-          <button className="delete" onClick={deleteLecture}>Delete</button>
+          <button className="claps" onClick={handleClap} >👏 {clapCount || 0 }</button>
+          <button className="thumsDown" onClick={dislikeClick} >👎 {dislikes || 0} </button>
+          <button className="addReviews" onClick={addReviews} >Add review</button>
+          <button className="delete" onClick={deletesLecture}>Delete</button>
         </card>
       </div>
     )

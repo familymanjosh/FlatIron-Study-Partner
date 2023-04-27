@@ -26,11 +26,6 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
                         New Lecture
                     </Menu.Item>
                 </NavLink>
-                <NavLink to="/NewReviews">
-                    <Menu.Item>
-                        New Review
-                    </Menu.Item>
-                </NavLink>
                 <NavLink to="/allLectures">
                     <Menu.Item>
                         All Lectures
