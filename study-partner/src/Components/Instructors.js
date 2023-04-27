@@ -30,7 +30,7 @@ const Instructors = ({ lectures,addClap,addReview,deleteLecture,handleDislike })
           </button>
         ))}
       </h1>
-      <div className="instructor-list">
+      <div className="ui four cards">
         {filteredLectures.map((lecture) => (
           <LectureCard key={lecture.id} lecture={lecture} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike}/>
         ))}

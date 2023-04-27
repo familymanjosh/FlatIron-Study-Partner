@@ -40,8 +40,8 @@ body {
 
 .App.light {
   --color: var(--black);
-  --background: var(--white);
-  --primary: var(--dark-turquoise);
+  --background: var(--dark-turquoise);
+  --primary: var(--white);
 }
 
 section {
@@ -79,7 +79,7 @@ button.active,
 button:focus,
 button:hover {
   outline: none;
-  color: var(--white);
+  color: var(--black);
   background-color: var(--primary);
   border: 2px solid var(--primary);
 }
@@ -98,7 +98,7 @@ button.blue {
 button.blue.active,
 button.blue:focus,
 button.blue:hover {
-  color: var(--white);
+  color: var(--black);
   background-color: var(--blue);
   border: 2px solid var(--blue);
 }
