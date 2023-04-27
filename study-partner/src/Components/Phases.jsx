@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Phase from "./Phase";
+import LectureCard from "./LectureCard";
 
 const Phases = ({ lectures,addClap,addReview,deleteLecture,handleDislike }) => {
   const [selectedPhase, setSelectedPhase] = useState("");
@@ -29,7 +29,7 @@ const Phases = ({ lectures,addClap,addReview,deleteLecture,handleDislike }) => {
       </h1>
       <div className="Phase-list">
         {filteredLectures.map((lecture) => (
-          <Phase key={lecture.id} lecture={lecture} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike} />
+          <LectureCard key={lecture.id} lecture={lecture} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike} />
         ))}
       </div>
     </div>

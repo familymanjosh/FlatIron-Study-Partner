@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Instructor from "./Instructor";
+import LectureCard from "./LectureCard";
 
 const Instructors = ({ lectures,addClap,addReview,deleteLecture,handleDislike }) => {
   const [selectedInstructor, setSelectedInstructor] = useState("");
@@ -32,7 +32,7 @@ const Instructors = ({ lectures,addClap,addReview,deleteLecture,handleDislike })
       </h1>
       <div className="instructor-list">
         {filteredLectures.map((lecture) => (
-          <Instructor key={lecture.id} lecture={lecture} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike}/>
+          <LectureCard key={lecture.id} lecture={lecture} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike}/>
         ))}
       </div>
     </div>
