@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+FLATIRON'S STUDY PARTNER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is made for Flatiron Students, from 2023 on that can find all the lectures that will be updated each phase. As a user a student can find different cohort start dates as well as lectures by phase, or Instructors. The home page is images from NASA that are not filly completed. There are useful features of this application detailed below, but it's main purpose is as a demonstration of React component architecture, client-side routing, fetch calls, and local json database manipulation. This application is a labor of love created for a React group project by Joshua Collins, Jai Stellmacher, and Layne Andrews all software engineering students at Flatiron School.
 
-## Available Scripts
+Installation
+Clone the repository
+git clone git@github.com:familymanjosh/Flatiron-Study-Partner
+Change to the project directory
+cd study-partner
+Install the dependencies
+npm install
+Install 'json-server' globally (if you haven't already)
+npm install -g json-server
+Run the server
+npm run server
 
-In the project directory, you can run:
 
-### `npm start`
+Launch the application
+npm start
+This should open a new browser window to run the app on http://localhost:3000
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Main Components and Usage
+Home
+The Home page contains the Welcome text,
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Curiosity
+Opportunity
+Spirit
+Future Functionality and Unused Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As of first release (2023.04.28) there is no commenting functionality on this application.
 
-### `npm run build`
+Contributing
+Feel free to fork and clone your own copy of this repository for your own purposes. This project's creators intend to tweak and improve its functionality in the future. Comments are welcome, but please do not attempt to alter our source project's code or repository in any way.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Copyright (c) 2023 
+https://github.com/familymanjosh ----- Joshua Collins 
+https://github.com/jstellmacher ------ Jai Stellmacher
+https://github.com/layneandrews ------ Layne Andrews
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This application was created and is owned by Joshua Collins of Los Angeles, CA and Jai Stellmacher of Flagstaff, AZ and Layne Andrews of Denver, CO (2023)

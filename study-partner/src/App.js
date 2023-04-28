@@ -10,6 +10,7 @@ import NewReviewForm from "./Components/NewReviewForm";
 import "./App.css";
 import Home from "./Components/Home";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import Footer from "./Components/Footer";
 
 
 const App = () => {
@@ -185,8 +186,8 @@ const App = () => {
         <Route path="/lectures/:id/reviews/new">
           <NewReviewForm addReview={addReview} />
         </Route>
-
       </Switch>
+      <Footer />
     </div>
   );
 };
