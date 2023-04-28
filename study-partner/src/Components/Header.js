@@ -12,8 +12,9 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
             <header>
             <button onClick={handleClick}>{buttonTextContent}</button>
             <h1>
-            <span className="logo">{"//"}</span>
-            Flatiron's Study Partner
+            <span className="logo">
+            {"//"} Flatiron's Study Partner
+            </span>
             </h1>
             <Menu className='menu'>
                 <NavLink to="/">
