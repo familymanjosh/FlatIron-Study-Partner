@@ -9,6 +9,8 @@ import Cohorts from "./Components/Cohorts";
 import NewReviewForm from "./Components/NewReviewForm";
 import "./App.css";
 import Home from "./Components/Home";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -126,15 +128,47 @@ const App = () => {
     );
   };
 
-
-
-
   return (
     <div className={isDarkMode ? "App" : "App light"}>
       <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
       <Switch>
         <Route exact path="/">
           <Home />
+            
+              <Parallax pages={4}>
+                <ParallaxLayer
+                offset={1}
+                speed={1}
+                style={{
+                    backgroundImage: `url("/images/dusty-death.jpg")`,
+                    backgroundSize: "cover",
+                }}
+                ></ParallaxLayer>
+                <ParallaxLayer
+                offset={2}
+                speed={.5}
+                style={{
+                    backgroundImage: `url("/images/galaxy.jpg")`,
+                    backgroundSize: "cover",
+                }}
+                ></ParallaxLayer>
+                <ParallaxLayer
+                offset={3}
+                speed={.5}
+                style={{
+                    backgroundImage: `url("/images/orion-flame.jpg")`,
+                    backgroundSize: "cover",
+                }}
+                ></ParallaxLayer>
+                <ParallaxLayer
+                offset={4}
+                speed={1}
+                style={{
+                    backgroundImage: `url("/images/orion.jpg")`,
+                    backgroundSize: "cover",
+                }}
+                ></ParallaxLayer> 
+              </Parallax>
         </Route>
         <Route exact path="/lectures">
           <LecturesContainer lectures={lectures} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike} />
