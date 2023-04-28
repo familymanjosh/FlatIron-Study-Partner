@@ -5,6 +5,7 @@
   --black: #000000;
   --white: #f1f1f1;
   --grey: #d6e2e7;
+  --gold: #ddb900;
   --dark-grey: #7f8a8e;
   --yellow: #f9c51a;
   --orange: #ff5c00;
@@ -21,8 +22,9 @@
 /* layout */
 * {
   padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  margin: 4 rem;
+  box-sizing: content-box;
+  color: var(--gold);
 }
 
 body {
@@ -33,15 +35,15 @@ body {
 }
 
 .App {
-  color: var(--color);
+  color: var(--gold);
   background-color: var(--background);
   min-height: 100vh;
 }
 
 .App.light {
   --color: var(--black);
-  --background: var(--dark-turquoise);
-  --primary: var(--white);
+  --background: var(--gold);
+  --primary: var(--black);
 }
 
 section {
@@ -50,20 +52,28 @@ section {
   flex-direction: column;
   align-items: center;
 }
+h1 {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--gold);
 
+}
 /* buttons */
 .btns {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  color: var(--black);
 }
 
 .btns button {
-  margin: 0 0.5rem;
+  margin: auto;
 }
 
 button {
-  padding: 0.5rem 0.75rem;
+  padding: auto;
   border: none;
   font: inherit;
   font-weight: 600;
@@ -73,6 +83,7 @@ button {
   background-color: var(--background);
   border: 2px solid var(--dark-turquoise);
   transition: background-color 0.2s;
+  color: gold;
 }
 
 button.active,
@@ -105,19 +116,24 @@ button.blue:hover {
 
 /* links */
 a {
-  color: var(--color);
-  border-bottom: 1px solid var(--color);
-  text-decoration: none;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  text-decoration: var(--gold);
+  display: block;
+  margin: auto 50px;
+  padding: auto;
+  text-align: center;
+  position: relative;
 }
 
 a:hover {
-  background-color: var(--blue);
+  background-color: var(--grey);
   border-bottom: 1px solid var(--blue);
 }
 
 /* header */
 header {
-  padding: 1rem;
+  padding: 3rem;
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -130,15 +146,20 @@ header {
   font-family: Helvetica;
   margin-right: 0.5rem;
 }
-
+.h1 {
+  color: var(--turquoise);
+  font-size: 1.25em ;
+  font-family: Helvetica;
+  margin-right: 0.5rem;
+}
 .nav {
-  padding-right: 850px;
+  padding-right: 90px;
   display: block;
   margin: auto;
   padding: auto;
   text-align: center;
   position: relative;
-  left: 425px;
+  left: 60px;
 }
 
 /* forms */
@@ -198,22 +219,23 @@ select:focus {
 
 /* cards */
 .cards {
-  margin: 0 auto;
-  list-style: none;
-  width: 100%;
+  margin: auto auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding-left: 200px;
+  grid-template-columns: repeat(3, minmax(1vw, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
 }
 
+
 .card {
-  
-  max-width: 400px;
-  display: grid;
+  max-width: auto;
+  display: block;
   grid-template-rows: auto 1fr auto;
-  border: 7px solid rgb(12, 200, 12);
+  border: 7px solid #ddb900;
   border-radius: 5%;
+  overflow: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
 }
 
 @media screen and (max-width: 588px) {
@@ -224,18 +246,19 @@ select:focus {
   }
 }
 
-.card .image {
-  max-height: 200px;
-  overflow: hidden;
-  position: relative;
+.card button{
+  margin: 2vh 1vw;
+  padding: 1rem;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  color: var(--primary);
+  background-color: var(--background);
+  border: 10px solid var(--gold);
+  transition: background-color 0.2s;
 }
-
-.card .image img {
-  width: 100%;
-  height: 175px;
-  object-fit: cover;
-}
-
 .card .image .claps {
   color: transparent;
   text-shadow: 0 0 0 var(--turquoise);
@@ -252,6 +275,10 @@ select:focus {
 
 .card .details {
   margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
 }
 
 .card .details h4 {

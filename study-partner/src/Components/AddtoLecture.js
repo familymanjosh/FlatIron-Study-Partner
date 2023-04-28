@@ -60,14 +60,13 @@ const AddtoLecture = ({handleSubmit}) => {
 
                     className="input-text" />
                 <br />
-                <input
-                    type="text"
-                    name="reviews"
-                    value={reviews}
-                    placeholder="Enter a lecture review..."
-                    onChange={(e) => setReviews(e.target.value)}
-
-                    className="input-text" />
+                <textarea
+                 name="reviews"
+                 value={reviews}
+                 placeholder="Enter a lecture review..."
+                 onChange={(e) => setReviews(e.target.value)}
+                 className="input-text"
+                ></textarea>
                 <br />
                 <input
                     type="text"

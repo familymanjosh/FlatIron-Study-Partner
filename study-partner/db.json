@@ -48,13 +48,14 @@
       "title": "DOM Events",
       "link": "https://www.youtube.com/embed/K5WhnNf9pDI",
       "phase": 1,
-      "clapCount": 3,
-      "dislikes": 4,
+      "clapCount": 16,
+      "dislikes": 5,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2y5xvO-5eqhAp9malA76eouc5A1WabvORaVEjRmZh&s",
       "date": "03/22/23",
       "cohort": "03/20/23",
       "reviews": [
-        "great!"
+        "great!",
+        ""
       ],
       "instructor": "Morgan VanYperen",
       "starterCode": "github",
@@ -1093,7 +1094,8 @@
       "date": "12/12/22",
       "cohort": "11/21/22",
       "reviews": [
-        "great!"
+        "great!",
+        ""
       ],
       "instructor": "Matteo Piccini",
       "starterCode": "https://github.com/gnappo1/rick-and-morty-112122",
@@ -1186,12 +1188,13 @@
       "link": "https://youtu.be/0kqVPB_ReCQ",
       "phase": 2,
       "clapCount": 0,
-      "dislikes": 0,
+      "dislikes": 3,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0tR_1Ongq9EVPWnd_KgwYIoS1-1tZGQ_9i6b23kLUUA&s",
       "date": "12/19/22",
       "cohort": "11/21/22",
       "reviews": [
-        "great!"
+        "great!",
+        "hi"
       ],
       "instructor": "Matteo Piccini",
       "starterCode": "https://github.com/gnappo1/react-hooks-practice-stocks",

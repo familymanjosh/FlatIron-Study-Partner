@@ -23,13 +23,13 @@ const LectureCard = ({ lecture, addClap, addReview, deleteLecture, handleDislike
 
   return (
     <div className="card">
-      <card>
+      <card className= "lecture-card">
         <h1>{title}</h1>
         <h2>Date: {date}</h2>
         <h2>{instructor}</h2>
         <h2>Cohort: {cohort}</h2>
         <img src={image} alt="Lecture" />
-        <h2>Reviews: <ul>{reviews.map(r => <li>{r}</li>)}</ul> </h2>
+        <h2>Reviews: {Array.isArray(reviews) &&  <ul>{reviews.map(r => <li>{r}</li>)}</ul>} </h2>
         {/* <iframe
           width="100%"
           height="auto"

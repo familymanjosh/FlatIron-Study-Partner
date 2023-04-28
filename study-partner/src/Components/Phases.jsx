@@ -13,18 +13,14 @@ const Phases = ({ lectures,addClap,addReview,deleteLecture,handleDislike }) => {
     (lecture) => lecture.phase === selectedPhase
   );
 
-  const Phases = [
-    1,2,3,4
-  ];
+  const Phases = [ 1, 2, 3 ,4 ];
 
   return (
     <div className="Phases">
       <h1>
-        Phases :  
+        Phases : 
         {Phases.map((phase) => (
-          <button key={phase} onClick={() => handleClick(phase)}>
-            {phase}
-          </button>
+          <button key={phase} onClick={() => handleClick(phase)}>{phase}</button>
         ))}
       </h1>
       <div className="ui four cards">

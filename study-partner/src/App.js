@@ -8,6 +8,7 @@ import Phases from "./Components/Phases";
 import Cohorts from "./Components/Cohorts";
 import NewReviewForm from "./Components/NewReviewForm";
 import "./App.css";
+import Home from "./Components/Home";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -49,7 +50,7 @@ const App = () => {
     .then((r) => r.json())
     .then((newLecture) => {
       setLectures([...lectures, newLecture]);
-      history.push("/allLectures");
+      history.push("/lectures");
     });
   };
   const addClap = (id) => {
@@ -132,6 +133,9 @@ const App = () => {
     <div className={isDarkMode ? "App" : "App light"}>
       <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Route exact path="/lectures">
           <LecturesContainer lectures={lectures} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike} />
         </Route>
