@@ -16,6 +16,7 @@ const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [lectures, setLectures] = useState([]);
   // const [reviews, setReviews] = useState([]);
+
   
   const history = useHistory();
 
@@ -134,41 +135,37 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Home />
-            
-              <Parallax pages={4}>
-                <ParallaxLayer
-                offset={1}
-                speed={1}
-                style={{
-                    backgroundImage: `url("/images/dusty-death.jpg")`,
-                    backgroundSize: "cover",
-                }}
-                ></ParallaxLayer>
-                <ParallaxLayer
-                offset={2}
-                speed={.5}
-                style={{
-                    backgroundImage: `url("/images/galaxy.jpg")`,
-                    backgroundSize: "cover",
-                }}
-                ></ParallaxLayer>
-                <ParallaxLayer
-                offset={3}
-                speed={.5}
-                style={{
-                    backgroundImage: `url("/images/orion-flame.jpg")`,
-                    backgroundSize: "cover",
-                }}
-                ></ParallaxLayer>
-                <ParallaxLayer
-                offset={4}
-                speed={1}
-                style={{
-                    backgroundImage: `url("/images/orion.jpg")`,
-                    backgroundSize: "cover",
-                }}
-                ></ParallaxLayer> 
-              </Parallax>
+          <Parallax pages={3} >
+          <ParallaxLayer 
+          offset={0}
+          speed={1.4}
+          factor={2} //makes it factor multiple pages
+          style={{
+            backgroundImage: 'url(/images/galaxy.jpg)',
+            backgroundSize: 'cover',
+          }}>
+          </ParallaxLayer>
+
+          <ParallaxLayer 
+          offset={1}
+          speed={1}
+          style={{
+            backgroundImage: 'url(/images/dusty-death.jpg)',
+            backgroundSize: 'cover',
+            }}>
+          </ParallaxLayer>
+
+          <ParallaxLayer 
+          offset={2} 
+          speed={1.5} //scrolling speed
+          factor={4}
+          style={{
+            backgroundImage: 'url(/images/orion-flame.jpg)',
+            backgroundSize: 'cover',
+          }}>   
+          </ParallaxLayer>
+          </Parallax>  
+                
         </Route>
         <Route exact path="/lectures">
           <LecturesContainer lectures={lectures} addClap={addClap} addReview={addReview} deleteLecture={deleteLecture} handleDislike={handleDislike} />
